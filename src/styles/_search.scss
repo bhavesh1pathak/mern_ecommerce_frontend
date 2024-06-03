@@ -1,0 +1,132 @@
+.product-search-page {
+    padding: 2rem;
+    @include flex(row, flex-start, stretch, 2rem);
+    min-height: calc(100vh - 6.5vh);
+
+    > aside {
+        min-width: 20rem;
+        box-shadow: 5px 7px 22px rgba(0, 0, 0, 0.3);
+        padding: 2rem;
+        @include flex(column, flex-start, stretch, 0.5rem);
+
+        > h2 {
+            @include heading;
+            color: #FF7E5F; /* Orange color */
+        }
+
+        > div {
+            > input,
+            > select {
+                @include inputStyle(100%, 1rem, white, 1px solid rgba(154, 154, 154, 0.39));
+                border-radius: 10px;
+                margin: 0.6rem;
+            }
+        }
+    }
+
+    > main {
+        width: 100%;
+        padding: 0.2rem;
+
+        > h1 {
+            @include heading;
+            color: #333; /* Dark gray color */
+        }
+
+        > input {
+            @include inputStyle(50%);
+            border-radius: 5px;
+            margin: 1rem;
+            font-size: 1.2rem;
+            display: block;
+        }
+
+        .search-product-list {
+            @include flex(row, flex-start, flex-start);
+            flex-wrap: wrap;
+            height: calc(100% - 10rem);
+            overflow-y: auto;
+        }
+
+        article {
+            @include flex;
+
+            > button {
+                @include flex;
+                @include btn(0.5rem 1rem, #4CAF50, #FFEB3B); /* Green and Yellow colors */
+                border-radius: 10px;
+
+                &:disabled {
+                    cursor: not-allowed;
+                    opacity: 0.5;
+                    color: aquamarine;
+                }
+            }
+        }
+    }
+}
+
+.product-card {
+    width: 14rem;
+    height: 16rem;
+    padding: 1rem;
+    flex: none;
+    @include flex(column, flex-start, center, 3px);
+    position: relative;
+    background-color: #E91E63; /* Pink color */
+    border-radius: 10px; /* Rounded corners */
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Soft shadow effect */
+    transition: transform 0.3s, box-shadow 0.3s; /* Smooth transform and box-shadow transition */
+
+    &:hover {
+        transform: translateY(-5px); /* Move card up on hover */
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2); /* Increase shadow on hover */
+    }
+
+    &:hover > div {
+        opacity: 1;
+    }
+
+    img {
+        @include square(calc(18.75rem - 3rem));
+        object-fit: contain;
+        margin: 1rem;
+    }
+
+    span {
+        font-weight: 500;
+        font-size: 1.1rem;
+        color: white; /* White color */
+    }
+
+    > div {
+        opacity: 0;
+        position: absolute;
+        @include square(100%);
+        top: 0;
+        left: 0;
+        background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent black background */
+        @include flex;
+
+        button {
+            width: 3rem;
+            height: 3rem;
+            border-radius: 50%;
+            border: none;
+            background-color: rgba(255, 255, 255, 0.8); /* Semi-transparent white background */
+            cursor: pointer;
+            color: #FF5722; /* Deep Orange color */
+            font-size: 1.5rem; /* Larger font size */
+            transition: transform 0.3s, background-color 0.3s; /* Smooth transform and background-color transition */
+
+            &:hover {
+                transform: scale(1.1); /* Scale button up on hover */
+                background-color: rgba(255, 255, 255, 1); /* Fully opaque white background on hover */
+            }
+
+            &:hover {
+                transform: rotate(-30deg); /* Rotate left on hover */
+            }
+        }
+    }
+}

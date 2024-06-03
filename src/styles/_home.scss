@@ -1,0 +1,129 @@
+.home {
+    padding: 0.1rem 1%;
+    display: flex;
+    flex-direction: column;
+    height: calc(100vh - 0.2rem);
+    width: 100%;
+    background-color: #f5f5f5; /* Light gray background color */
+
+    > section {
+        width: 100%;
+        height: 30rem;
+        margin: auto;
+        background: url("../assets/bg.png") no-repeat center/cover; /* Gradient background */
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        color: white;
+        font-size: 2rem;
+        font-weight: bold;
+        text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3); /* Text shadow for better contrast */
+    }
+
+    > h1 {
+        margin-top: 1rem;
+        font-size: 2rem; /* Larger font size */
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        color: #333; /* Dark gray color */
+    }
+
+    .findmore {
+        font-size: 1.2rem; /* Larger font size */
+        color: #ff7e5f; /* Orange color */
+        text-decoration: underline; /* Underline effect */
+        transition: color 0.3s; /* Smooth color transition on hover */
+        cursor: pointer;
+        &:hover {
+            color: #feb47b; /* Light orange color on hover */
+        }
+    }
+
+    > main {
+        width: 100%;
+        flex: 1;
+        display: flex;
+        gap: 1rem;
+        overflow-x: auto;
+
+        &::-webkit-scrollbar {
+            display: none;
+        }
+    }
+
+    .product-card {
+        width: 14rem;
+        height: 16rem;
+        padding: 1rem;
+        flex: none;
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+        align-items: center;
+        position: relative;
+        background-color: #fff;
+        border-radius: 10px; /* Rounded corners */
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Soft shadow effect */
+        transition: transform 0.3s, box-shadow 0.3s; /* Smooth transform and box-shadow transition */
+
+        &:hover {
+            transform: translateY(-10px) scale(1.1); /* Move card up and zoom on hover */
+            box-shadow: 0 7px 17px rgba(0, 0, 0, 0.2); /* Increase shadow on hover */
+        }
+
+        img {
+            width: 100%;
+            height: auto;
+            max-width: 100%;
+            max-height: 100%;
+            margin: 1rem;
+            border-radius: 5px; /* Rounded corners for images */
+            transition: transform 0.3s; /* Smooth transform transition */
+        }
+
+        &:hover img {
+            transform: scale(1.1); /* Scale up image on hover */
+        }
+
+        span {
+            font-weight: 500;
+            font-size: 1.2rem; /* Larger font size */
+            color: #333; /* Dark gray color */
+            margin-bottom: 0.5rem;
+        }
+
+        > div {
+            opacity: 0;
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            top: 0;
+            left: 0;
+            background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent background */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+            button {
+                width: 3rem;
+                height: 3rem;
+                border-radius: 50%;
+                border: none;
+                background-color: rgba(255, 255, 255, 0.8); /* Semi-transparent white background */
+                cursor: pointer;
+                color: #ff7e5f; /* Orange color */
+                font-size: 1.5rem; /* Larger font size */
+                transition: transform 0.3s, background-color 0.3s; /* Smooth transform and background-color transition */
+                &:hover {
+                    transform: scale(1.1); /* Scale button up on hover */
+                    background-color: rgba(255, 255, 255, 1); /* Fully opaque white background on hover */
+                }
+                &:hover {
+                    transform: rotate(-30deg); /* Rotate left on hover */
+                }
+            }
+        }
+    }
+}
