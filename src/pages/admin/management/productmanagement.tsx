@@ -87,7 +87,7 @@ const [deleteProduct] = useDeleteProductMutation()
      productId:data?.product._id!,
     });
 
-    responseToast(res,navigate,"/admin/products")
+    responseToast(res,navigate,"/admin/product")
 
   };
 
